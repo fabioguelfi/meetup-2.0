@@ -11,6 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
 
+// services providers
+import { RestaurantsService } from './services/restaurants.service';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
     HomeComponent,
     AboutComponent,
     RestaurantsComponent,
-    RestaurantComponent
+    RestaurantComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
     RouterModule,
     RouterModule.forRoot(ROUTES),
   ],
-  providers: [],
+  providers: [
+    RestaurantsService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
