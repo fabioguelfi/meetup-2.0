@@ -3,7 +3,9 @@ import { Restaurant } from './../restaurants/restaurant/restaurant.model';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { MEAT_API } from './../api';
+import { ErrorHandler } from './../app.error-handler';
 
 @Injectable()
 export class RestaurantsService {
@@ -13,7 +15,8 @@ export class RestaurantsService {
   public restautans(): Observable<Restaurant[]> {
 
     return this.http.get(`${MEAT_API}/restaurants`)
-      .map(response => response.json());
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
   }
 
 }
