@@ -11,8 +11,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="main-restaurants.html">Restaurantes <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Sobre</a></li>
+          <li routeLinkActive="active"><a [routerLink]="['/']" href="main-restaurants.html">Restaurantes <span class="sr-only">(current)</span></a></li>
+          <li routeLinkActive="active"><a [routerLink]="['/about']" href="#">Sobre</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
