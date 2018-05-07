@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
-
+import { FormsModule } from '@angular/forms';
 // services providers
 import { RestaurantsService } from './services/restaurants.service';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -41,6 +41,7 @@ import { OrderComponent } from './order/order.component';
     BrowserModule,
     HttpModule,
     RouterModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [
