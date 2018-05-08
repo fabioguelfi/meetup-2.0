@@ -27,10 +27,10 @@
           </mt-input-container>
 
         </div>
-        <div class="col-sm-2 col-xs-6">
+        <div class="col-sm-3 col-xs-6">
 
-          <mt-input-container errorMessage="Numero obrigatorio" label="Número">
-            <input type="text" class="form-control" id="inputSuccess" autocomplete="off" ngModel required name="number" ngModel placeholder="Número">
+          <mt-input-container errorMessage="Origatório e somente numeros" label="Número">
+            <input type="text" class="form-control" id="inputSuccess" pattern="^[0-9]*$"autocomplete="off" ngModel required name="number" ngModel placeholder="Número">
           </mt-input-container>
 
         </div>
