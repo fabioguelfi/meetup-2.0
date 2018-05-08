@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
+  public paymentOptions = [
+    { label: 'Dinheiro', value: 'MON' },
+    { label: 'Cartão de Débito', value: 'DEB' },
+    { label: 'Cartão Refeição', value: 'REF' },
+  ];
+
   constructor() { }
 
   ngOnInit() {
