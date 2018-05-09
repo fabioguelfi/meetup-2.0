@@ -12,11 +12,7 @@ export class DeliveryCostsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.total);
-    console.log(this.delivery);
-    console.log(this.itemsValue);
-  }
+  ngOnInit() {}
 
   public total(): number {
     return this.delivery + this.itemsValue;

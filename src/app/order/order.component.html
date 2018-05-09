@@ -38,7 +38,7 @@
         <div class="col-sm-4 col-xs-6">
 
           <mt-input-container>
-            <input type="text" class="form-control" id="inputSuccess" autocomplete="off" name="optional" ngModel placeholder="Complemento">
+            <input type="text" class="form-control" id="inputSuccess" autocomplete="off" name="optionalAddress" ngModel placeholder="Complemento">
           </mt-input-container>
 
         </div>
@@ -67,10 +67,7 @@
 
           <div class="form-group">
 
-            <mt-radio
-            [options]="paymentOptions"
-            name="paymentOption"
-            ngModel></mt-radio>
+            <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
 
           </div>
 
@@ -79,9 +76,7 @@
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Frete e Total:</p>
 
-          <mt-delivery-costs
-          [delivery]="delivery"
-          [itemsValue]="itemsValue()" ></mt-delivery-costs>
+          <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs>
 
         </div>
         <!-- /.col -->
@@ -91,7 +86,9 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button [disabled]="!form.valid || cartItems().length === 0" class="btn btn-success pull-right">
+        <button
+        [disabled]="!form.valid || cartItems().length === 0"
+        class="btn btn-success pull-right" (click)="checkOrder(form.value)">
           <i class="fa fa-credit-card"></i> Concluir Pedido
         </button>
       </div>

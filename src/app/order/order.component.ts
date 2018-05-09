@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from './../services/order.service';
 import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
+import { Order, OrderItem } from './order.model';
 
 @Component({
   selector: 'mt-order',
@@ -40,6 +41,17 @@ export class OrderComponent implements OnInit {
 
   public remove(item: CartItem): void {
     this.orderService.remove(item);
+  }
+
+  public checkOrder(order: Order): void {
+    order.orderItems = this.cartItems()
+      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+
+    this.orderService.checkOrder(order)
+      .subscribe((orderId: string) => {
+        console.log(`Compra concluida ${orderId}`);
+        this.orderService.clear();
+      });
   }
 
 }
